@@ -1,0 +1,54 @@
+<form>
+  <div class="panel panel-primary">
+    <div class="panel-heading" *ngIf="user.id==null">Create</div>
+    <div class="panel-heading" *ngIf="!(user.id==null)">Edit</div>
+    <div class="panel-body">
+        <div class="form-group">
+            <label for="fname">Name:</label><br>
+            <input class="form-control" type="text" id="name" name="name" [(ngModel)]="user.name"  required minlength="4">
+        </div>
+            
+            <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="alert alert-danger">
+
+              <div *ngIf="name.errors.required">
+                Name is required.
+              </div>
+              <div *ngIf="name.errors.minlength">
+                Name must be at least 4 characters long.
+              </div>
+              <div *ngIf="name.errors.forbiddenName">
+                Name cannot be Bob.
+              </div>
+
+            </div> -->
+
+    <br>
+    <div class="form-group">
+        <label for="Contact">Contact:</label><br>
+        <input class="form-control" type="text" id="contact" name="contact" [(ngModel)]="user.contact"  required minlength="10">
+    </div>
+
+        <!-- <div *ngIf="contact.invalid && (contact.dirty || contact.touched)"
+            class="alert alert-danger">
+
+          <div *ngIf="contact.errors.required">
+            Number is required.
+          </div>
+          <div *ngIf="contact.errors.minlength">Number must be at least 10 characters long.</div>
+
+          </div> -->
+
+    
+          <br>
+
+    <div class="form-group">
+      <label for="email">Email:</label><br>
+      <input class="form-control" type="email" id="email" name="email" [(ngModel)]="user.email"><br>
+    </div>
+      <button class="btn btn-primary" (click)="Submit()">Submit</button>
+    
+    </div>
+    </div>
+
+  </form>

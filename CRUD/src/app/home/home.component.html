@@ -1,0 +1,66 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">List Of User</div>
+    <div class="panel-body">
+    <table class ="table">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>          
+      </tr>
+        <tr *ngFor="let u of user" [routerLink]="['/details',u.id]">
+          <td>
+            {{u.id}}
+          </td>
+          <td>
+            {{u.name}}
+          </td>
+          <td>
+            {{u.age}}
+          </td>
+          <td>  
+            <button button="submit"  mat-raised-button color="primary"  (click)="Del(u.id)">
+                <mat-icon>delete</mat-icon>
+            </button>           
+          </td>
+          <td>  
+            <button button="submit"  mat-raised-button color="primary"  (click)="edit(u.id)">
+                <mat-icon>edit</mat-icon>
+            </button>           
+          </td>
+          <td>  
+            <button button="submit"  mat-raised-button color="primary"  (click)="details(u.id)">
+                <mat-icon>info</mat-icon>
+            </button>           
+          </td> 
+        </tr>
+        </table>
+        </div>
+
+</div>
+
+
+<!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef> Id. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container  matColumnDef="operations">
+    <th mat-header-cell *matHeaderCellDef  mat-sort-header> Operations </th>    
+    <td mat-cell *matCellDef="let element">  
+      <button  mat-button  color="primary" (click)="Del(element.id)"><mat-icon>delete</mat-icon></button>
+      <button  mat-button  color="primary" (click)="edit(element.id)"><mat-icon>edit</mat-icon></button>
+      <button  mat-button  color="primary" (click)="details(element.id)"><mat-icon>info</mat-icon></button>
+    </td>>    
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+ -->
